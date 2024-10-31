@@ -5,6 +5,7 @@
     
     padding: 15px;
     margin: 5px;
+    padding-bottom: 0px;
 }
 
 .todo-form input,
@@ -17,7 +18,9 @@
     border-radius: 8px;
     border: solid 1px var(--textClr);
 }
-
+.todo-form button{
+    margin-bottom: 2px;
+}
 .todo-form select:hover{
     cursor: pointer;
     box-shadow: 0 0 4px var(--shadowClr);
