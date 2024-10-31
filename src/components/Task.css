@@ -1,0 +1,27 @@
+.todo-item{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.task-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;     
+}
+
+.task-date p{
+    margin: 5px 2px;    
+}
+
+.btn-box{
+    display: flex;
+    justify-content: right;
+}
+
+.btn-box button{
+    font-size: 12px;
+    padding: 6px;
+    margin: 0px 2px;
+}

@@ -1,0 +1,88 @@
+import './ToDoForm.css'
+import React, { useState } from 'react'
+
+import TodoPriority from '../helper/TodoPrirority'
+
+const getDate = () => {
+  const date = new Date()
+  date.setHours(date.getHours())
+  
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+
+  const formatedDate = `${year}-${month}-${day}` 
+
+  return formatedDate
+}
+
+const initValue = {
+  task: "",
+  dateTime: getDate(), 
+  priority: TodoPriority.HIGH,
+}
+
+const ToDoForm = ({todo, saveTask}) => {
+  const [task, setTask] = useState(todo || initValue)
+  const [error, setError] = useState("")
+
+  const changeValueHandler = (e) => {
+    const {name, value} = e.target
+    setTask((prev) => ({...prev, [name]: value}))
+    setError("")
+  }
+
+  const validationValue = () => {
+    if (task.task.length === 0) {
+      setError("Task text is required")
+      return false
+    }
+    return true
+  }  
+
+  const onSubmitHandle = (e) => {
+    e.preventDefault()
+
+    if (validationValue())
+    {
+      saveTask(task)  
+      setTask(initValue)
+    }    
+  }
+
+
+  return (
+    <form className='todo-form' onSubmit={onSubmitHandle}>
+      <input 
+        name='task' 
+        id='task'
+        placeholder="Write ToDo Task" 
+        value={task.task} 
+        onChange={changeValueHandler}
+      />
+
+      <input 
+        type="date" 
+        name='dateTime'   
+        id='dateTime' 
+        value={task.dateTime} 
+        onChange={changeValueHandler}
+      />
+
+      <select 
+        name='priority' 
+        id='priority' 
+        value={task.priority} 
+        onChange={changeValueHandler}
+      >
+        <option value={TodoPriority.HIGH}>{TodoPriority.HIGH}</option>
+        <option value={TodoPriority.MEDIUM}>{TodoPriority.MEDIUM}</option>
+        <option value={TodoPriority.LOW}>{TodoPriority.LOW}</option>
+      </select>
+      <button type="submit">{todo ? "Save Changes" : "Add Task"}</button>
+      {error && <span>{error}</span>}
+    </form>
+  )
+}
+
+export default ToDoForm
