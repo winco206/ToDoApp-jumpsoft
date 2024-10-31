@@ -10,13 +10,24 @@ const getTasksByState = (list, state) => {
   return list.filter((todo) => {return todo.state === state})
 }
 
-const getSortedTaskByPriority = (tasks) => {
+const getSortedTask = (tasks) => {
   const priorityOrder = {
     [TodoPriority.HIGH]: 1,
     [TodoPriority.MEDIUM]: 2,
     [TodoPriority.LOW]: 3,
   }
-  return [...tasks].sort((a,b) => priorityOrder[a.priority] - priorityOrder[b.priority])
+  //return [...tasks].sort((a,b) => priorityOrder[a.priority] - priorityOrder[b.priority])
+  return [...tasks].sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+
+    if (dateA.getTime() === dateB.getTime())
+    {
+      return priorityOrder[a.priority] - priorityOrder[b.priority]
+    }
+
+    return dateA - dateB
+  })
 }
 
 const getLastId = (tasks) => {
@@ -42,7 +53,7 @@ const App = () => {
   const addTask = (todo) => {
     const lastId = getLastId(toDos)
     const updatedToDos = [...toDos, { ...todo, id: (lastId + 1), state: TodoState.TODO}]
-    const sortedToDos = getSortedTaskByPriority(updatedToDos)
+    const sortedToDos = getSortedTask(updatedToDos)
     setToDos(sortedToDos)
     localStorage.setItem('todos', JSON.stringify(sortedToDos));
   }
@@ -84,7 +95,7 @@ const App = () => {
     const updatedToDos = toDos.map((todo) => {
       return todo.id === task.id ? task : todo
     })
-    const sortedToDos = getSortedTaskByPriority(updatedToDos)
+    const sortedToDos = getSortedTask(updatedToDos)
     setToDos(sortedToDos)
     setTaskToEdit(null)
     setOpenPopup(false)

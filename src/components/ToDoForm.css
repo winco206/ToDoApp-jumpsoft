@@ -11,22 +11,27 @@
 .todo-form button,
 .todo-form select{    
     flex: 1;
-    margin: 4px;
+    margin: 0px 4px 8px 4px;
     font-size: 16px;
     padding: 5px;
     border-radius: 8px;
     border: solid 1px var(--textClr);
 }
 
-
-.todo-form input:hover,
 .todo-form select:hover{
     cursor: pointer;
     box-shadow: 0 0 4px var(--shadowClr);
 }
 
 .todo-form input:hover{
-    cursor: auto
+    cursor: auto;
+    box-shadow: 0 0 4px var(--shadowClr);
+}
+
+.todo-form label{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--textClr);
 }
 
 .todo-form span{

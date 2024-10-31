@@ -1,5 +1,5 @@
 import './Task.css'
-import React, { useState } from 'react'
+import React from 'react'
 
 import TodoState from '../helper/TodoState';
 
@@ -15,6 +15,9 @@ const Task = ({todo, changeState, editTask, deleteTask}) => {
       break
     case TodoState.COMPLETE: 
       button_title = "Again"
+      break
+    default: 
+      button_title = "Again" 
       break
   }
 

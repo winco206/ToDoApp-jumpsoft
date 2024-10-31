@@ -60,6 +60,7 @@ const ToDoForm = ({todo, saveTask}) => {
 
   return (
     <form className='todo-form' onSubmit={onSubmitHandle}>
+      <label htmlFor="">Desription:</label>
       <input 
         name='task' 
         id='task'
@@ -67,7 +68,8 @@ const ToDoForm = ({todo, saveTask}) => {
         value={task.task} 
         onChange={changeValueHandler}
       />
-
+      
+      <label htmlFor="">Finish date:</label>
       <input 
         type="date" 
         name='date'   
@@ -76,6 +78,7 @@ const ToDoForm = ({todo, saveTask}) => {
         onChange={changeValueHandler}
       />
 
+      <label htmlFor="">Priority:</label>
       <select 
         name='priority' 
         id='priority' 
