@@ -5,7 +5,6 @@ import TodoPriority from '../helper/TodoPrirority'
 
 const getDate = () => {
   const date = new Date()
-  date.setHours(date.getHours())
   
   const year = date.getFullYear()
   const month = String(date.getMonth() + 1).padStart(2, '0')
@@ -18,7 +17,7 @@ const getDate = () => {
 
 const initValue = {
   task: "",
-  dateTime: getDate(), 
+  date: getDate(), 
   priority: TodoPriority.HIGH,
 }
 
@@ -34,9 +33,17 @@ const ToDoForm = ({todo, saveTask}) => {
 
   const validationValue = () => {
     if (task.task.length === 0) {
-      setError("Task text is required")
+      setError("Task text is required.")
       return false
     }
+
+    const today = new Date().toISOString().split('T')[0]
+    if (task.date < today)
+    {
+      setError("Date cannot be in the past.")
+      return false
+    }
+
     return true
   }  
 
@@ -63,9 +70,9 @@ const ToDoForm = ({todo, saveTask}) => {
 
       <input 
         type="date" 
-        name='dateTime'   
-        id='dateTime' 
-        value={task.dateTime} 
+        name='date'   
+        id='date' 
+        value={task.date} 
         onChange={changeValueHandler}
       />
 

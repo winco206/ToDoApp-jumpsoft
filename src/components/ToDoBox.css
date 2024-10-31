@@ -3,7 +3,7 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: top;
+    justify-content: flex-start;
     align-items: center;
 
     min-width: 200px;

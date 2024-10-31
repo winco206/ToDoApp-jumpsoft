@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import TodoState from '../helper/TodoState';
 
-const ToDo = ({todo, changeState, editTask, deleteTask}) => {   
+const Task = ({todo, changeState, editTask, deleteTask}) => {   
   let button_title = ""
   switch(todo.state)
   {
@@ -22,7 +22,7 @@ const ToDo = ({todo, changeState, editTask, deleteTask}) => {
     <div className='todo-item'>
         <div className='task-date'>
           <p>{todo.task}</p>
-          <p>{todo.dateTime}</p>          
+          <p>{todo.date}</p>          
         </div>
         <div className='btn-box'>
           <button onClick={() => changeState(todo.id)}>{button_title}</button>
@@ -34,4 +34,4 @@ const ToDo = ({todo, changeState, editTask, deleteTask}) => {
   )
 }
 
-export default ToDo
+export default Task

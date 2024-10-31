@@ -47,7 +47,7 @@ const App = () => {
     localStorage.setItem('todos', JSON.stringify(sortedToDos));
   }
 
-  const chnageStateHandler = (id) => {
+  const changeStateHandler = (id) => {
     const updatedToDos = toDos.map((todo) => {
                             if (todo.id === id)
                             {
@@ -105,19 +105,19 @@ const App = () => {
       <div className='boxes'>
         <ToDoBox title="To Do" 
           taskList={getTasksByState(toDos, TodoState.TODO)} 
-          changeState={chnageStateHandler} 
+          changeState={changeStateHandler} 
           editTask={editTaskHandler}
           deleteTask={deleteTaskHandler}
           />
         <ToDoBox title="In Progress" 
           taskList={getTasksByState(toDos, TodoState.IN_PROGRESS)} 
-          changeState={chnageStateHandler}
+          changeState={changeStateHandler}
           editTask={editTaskHandler}
           deleteTask={deleteTaskHandler} 
           />
         <ToDoBox title="Complete" 
           taskList={getTasksByState(toDos, TodoState.COMPLETE)} 
-          changeState={chnageStateHandler} 
+          changeState={changeStateHandler} 
           editTask={editTaskHandler}
           deleteTask={deleteTaskHandler}
           />

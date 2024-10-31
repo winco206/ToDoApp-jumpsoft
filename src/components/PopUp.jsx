@@ -1,13 +1,13 @@
 import "./PopUp.css"
 import React from 'react'
 
-const PopUp = (props) => {
-  return (props.popUPtriger) ? (
+const PopUp = ({title, popUPtriger, setPopUPtriger, children}) => {
+  return (popUPtriger) ? (
     <div className="popUpBody">
       <div className="popUpInner">
-        <h3>{props.title}</h3>
-        <button className="close-btn" onClick={() => props.setPopUPtriger(false)}>close</button>
-        {props.children}
+        <h3>{title}</h3>
+        <button className="close-btn" onClick={() => setPopUPtriger(false)}>close</button>
+        {children}
       </div>        
     </div>
   ) : null;
