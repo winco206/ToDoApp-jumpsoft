@@ -7,7 +7,7 @@ Aplikácia je postavená na technológiách Node.js (v21.6.2) a React.
 
 - Pridanie úlohy: popis úlohy, dátum dokončenia, priorita úlohy.
 - Filtrovanie všetkých úloh podľa dátumu a priority.
-- Farebné zvýraznenie priority
+- Farebné zvýraznenie úloh podľa priority.
 - Úprava existujúcej úlohy.
 - Odstránenie úlohy.
 - Uloženie zoznamu úloh do localStorage.
@@ -18,6 +18,8 @@ Po spustení aplikácia skontroluje, či v `localStorage` existujú staršie zá
 Aplikácia umožňuje pridať novú úlohu s parametrami: popis úlohy, dátum dokončenia a priorita úlohy.
 Po pridaní novej úlohy aplikácia pridá úlohe ID a stav „TODO”, aktualizuje zoznam úloh a zoradí ho podľa dátumu a priority.
 Aktualizovaný zoznam sa uloží do `localStorage` a úlohy sa na základe ich stavu (TODO, IN_PROGRESS, COMPLETE) zobrazia v troch stĺpcoch.
+
+Pri opakovaní úlohy (po kliknutí na "Again") program zkontroluje deadline úlohy, ak je v minulosti, dátum nastaví na aktuálny.
 
 Každá úloha obsahuje 3 tlačidlá:
 
@@ -30,23 +32,31 @@ Každá úloha obsahuje 3 tlačidlá:
 Zoznam úloh:
 ![Hlavná stránka](./img/mainPage.png)
 
-Popup okno pre pridanie úlohy a editáciu existujúcej úlohy:
+"PopUp" okno pre pridanie úlohy a editáciu existujúcej úlohy:
 ![PopUp](./img/popUp.png)
 
-Mobilné zobrazenie s vyfiltrovanými úlohami s vysokou prioritou:
+Mobilné zobrazenie filtrovaných úloh s vysokou prioritou.:
 ![Mobilné zobrazenie](./img/filterMobile.png)
 
 ## Spustenie projektu
 
-1. Stiahni si ZIP repozitára a rozbaľ ho.6
+1. Stiahni si ZIP repozitára a rozbaľ ho.
 2. Prejdi do adresára projektu:
+
+   ```
    cd ToDoApp-jumpsoft
+   ```
 
 3. Nainštaluj potrebné závislosi:
+
+   ```
    npm install
+   ```
 
 4. Spusti aplikáciu
+   ```
    npm start
+   ```
    Aplikácia sa spustí vo webovom prehliadači na http://localhost:3000 .
 
 Po spustení môžeš začať pridávať nové úlohy.
