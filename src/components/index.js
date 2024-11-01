@@ -3,3 +3,4 @@ export { default as Task } from './Task'
 
 export { default as ToDoBox } from './ToDoBox'
 export { default as PopUp } from './PopUp'
+export { default as ToDoWrapper } from './ToDoWrapper'

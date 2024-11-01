@@ -4,26 +4,26 @@ import React, { useState } from 'react'
 import TodoPriority from '../helper/TodoPrirority'
 
 const getDate = () => {
-  const date = new Date()
-  
+  const date = new Date()  
+
   const year = date.getFullYear()
   const month = String(date.getMonth() + 1).padStart(2, '0')
   const day = String(date.getDate()).padStart(2, '0')
 
-  const formatedDate = `${year}-${month}-${day}` 
+  const formatedDate = `${year}-${month}-${day}` // format YYYY-MM-DD
 
   return formatedDate
 }
 
-const initValue = {
+const initValue = { // inicializačná hodnota pre formulár
   task: "",
   date: getDate(), 
   priority: TodoPriority.HIGH,
 }
 
 const ToDoForm = ({todo, saveTask}) => {
-  const [task, setTask] = useState(todo || initValue)
-  const [error, setError] = useState("")
+  const [task, setTask] = useState(todo || initValue) // ak do komponentu nevstupuje todo (úloha), použije sa iniciačná hodnota
+  const [error, setError] = useState("")  // chybová hláška pre funkciu validácie
 
   const changeValueHandler = (e) => {
     const {name, value} = e.target
@@ -32,14 +32,15 @@ const ToDoForm = ({todo, saveTask}) => {
   }
 
   const validationValue = () => {
-    if (task.task.length === 0) {
+    if (task.task.length === 0) 
+    { // zabezpečí, že nebude pridaná prázdna úloha
       setError("Task text is required.")
       return false
     }
 
     const today = new Date().toISOString().split('T')[0]
     if (task.date < today)
-    {
+    { // zabezpečí, že nebude pridaná úloha so starým dátumom
       setError("Date cannot be in the past.")
       return false
     }
@@ -69,7 +70,7 @@ const ToDoForm = ({todo, saveTask}) => {
         onChange={changeValueHandler}
       />
       
-      <label htmlFor="">Finish date:</label>
+      <label htmlFor="">Due date:</label>
       <input 
         type="date" 
         name='date'   

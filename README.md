@@ -6,6 +6,8 @@ Aplikácia je postavená na technológiách Node.js (v21.6.2) a React.
 ## Funkcie
 
 - Pridanie úlohy: popis úlohy, dátum dokončenia, priorita úlohy.
+- Filtrovanie všetkých úloh podľa dátumu a priority.
+- Farebné zvýraznenie priority
 - Úprava existujúcej úlohy.
 - Odstránenie úlohy.
 - Uloženie zoznamu úloh do localStorage.
@@ -23,9 +25,20 @@ Každá úloha obsahuje 3 tlačidlá:
 2. Úprava úlohy.
 3. Vymazanie úlohy zo zoznamu.
 
+## Screen z aplikácie
+
+Zoznam úloh:
+![Hlavná stránka](./img/mainPage.png)
+
+Popup okno pre pridanie úlohy a editáciu existujúcej úlohy:
+![PopUp](./img/popUp.png)
+
+Mobilné zobrazenie s vyfiltrovanými úlohami s vysokou prioritou:
+![Mobilné zobrazenie](./img/filterMobile.png)
+
 ## Spustenie projektu
 
-1. Stiahni si ZIP repozitára a rozbaľ ho.
+1. Stiahni si ZIP repozitára a rozbaľ ho.6
 2. Prejdi do adresára projektu:
    cd ToDoApp-jumpsoft
 

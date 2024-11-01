@@ -1,0 +1,7 @@
+.boxes{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    flex-wrap: wrap;
+    overflow-y: auto;
+  }

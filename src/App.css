@@ -17,12 +17,22 @@ body,
   
 } 
 
-.boxes{
+.header-box{
   display: flex;
+  justify-content: space-between;
+}
+
+.filter-div{
+  display:flex;
   flex-direction: row;
-  flex: 1;
-  flex-wrap: wrap;
-  overflow-y: auto;
+}
+
+.filter-div input,
+.filter-div select{
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 10px 10px 5px 10px;
 }
 
 .App button{
@@ -31,21 +41,31 @@ body,
   border: none;
   border-radius: 8px;
   font-size: 16px;
-  padding: 5px;
+  padding: 5px 10px;
   margin: 10px 10px 5px 10px;
 }
 
 .App button:hover{
   cursor: pointer;
-  box-shadow: 0 0 4px var(--shadowClr);
+  box-shadow: 0 0 10px var(--shadowClr);
 }
 
 @media (max-width: 670px) {
-    .boxes{
-        flex-direction: column;
-        flex-wrap: nowrap;
-    }
+  .boxes{
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
 
+  .header-box,
+  .filter-div{
+    flex-direction: column;
+    margin-top: 5px;
+  }
+
+  .filter-div input,
+  .filter-div select{
+    margin: 5px 10px 0px 10px;
+  }
 }
 
 :root{
