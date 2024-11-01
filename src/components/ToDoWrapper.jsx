@@ -52,19 +52,19 @@ const ToDoWrapper = ({toDos, setToDos, setTaskToEdit, setOpenPopup }) => {
 
   return (
     <div className='boxes'>
-        <ToDoBox title="To Do" 
+        <ToDoBox title={TodoState.TODO}
           taskList={getTasksByState(toDos, TodoState.TODO)} 
           changeState={changeStateHandler} 
           editTask={editTaskHandler}
           deleteTask={deleteTaskHandler}
           />
-        <ToDoBox title="In Progress" 
+        <ToDoBox title={TodoState.IN_PROGRESS}
           taskList={getTasksByState(toDos, TodoState.IN_PROGRESS)} 
           changeState={changeStateHandler}
           editTask={editTaskHandler}
           deleteTask={deleteTaskHandler} 
           />
-        <ToDoBox title="Complete" 
+        <ToDoBox title={TodoState.COMPLETE} 
           taskList={getTasksByState(toDos, TodoState.COMPLETE)} 
           changeState={changeStateHandler} 
           editTask={editTaskHandler}

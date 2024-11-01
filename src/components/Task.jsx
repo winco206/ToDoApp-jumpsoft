@@ -10,7 +10,7 @@ const Task = ({todo, changeState, editTask, deleteTask}) => {
     switch(todo.state)
     {
       case TodoState.TODO: return "Start" 
-      case TodoState.IN_PROGRESS: return "Complete"
+      case TodoState.IN_PROGRESS: return "Finish"
       case TodoState.COMPLETE: return "Again"
       default: return "Again" 
     }

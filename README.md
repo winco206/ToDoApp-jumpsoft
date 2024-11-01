@@ -17,13 +17,13 @@ Aplikácia je postavená na technológiách Node.js (v21.6.2) a React.
 Po spustení aplikácia skontroluje, či v `localStorage` existujú staršie záznamy. Ak áno, tieto záznamy načíta do premennej vo forme zoznamu/poľa objektov.
 Aplikácia umožňuje pridať novú úlohu s parametrami: popis úlohy, dátum dokončenia a priorita úlohy.
 Po pridaní novej úlohy aplikácia pridá úlohe ID a stav „TODO”, aktualizuje zoznam úloh a zoradí ho podľa dátumu a priority.
-Aktualizovaný zoznam sa uloží do `localStorage` a úlohy sa na základe ich stavu (TODO, IN_PROGRESS, COMPLETE) zobrazia v troch stĺpcoch.
+Aktualizovaný zoznam sa uloží do `localStorage` a úlohy sa na základe ich stavu (TODO, IN_PROGRESS, DONE) zobrazia v troch stĺpcoch.
 
 Pri opakovaní úlohy (po kliknutí na 'Again') program skontroluje termín úlohy. Ak je v minulosti, nastaví ho na aktuálny dátum.
 
 Každá úloha obsahuje 3 tlačidlá:
 
-1. Prepínanie stavu: To Do -> In Progress -> Complete -> Again.
+1. Prepínanie stavu: To Do -> In Progress -> Done -> Again.
 2. Úprava úlohy.
 3. Vymazanie úlohy zo zoznamu.
 
