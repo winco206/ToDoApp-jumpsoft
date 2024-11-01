@@ -19,7 +19,7 @@ Aplikácia umožňuje pridať novú úlohu s parametrami: popis úlohy, dátum d
 Po pridaní novej úlohy aplikácia pridá úlohe ID a stav „TODO”, aktualizuje zoznam úloh a zoradí ho podľa dátumu a priority.
 Aktualizovaný zoznam sa uloží do `localStorage` a úlohy sa na základe ich stavu (TODO, IN_PROGRESS, COMPLETE) zobrazia v troch stĺpcoch.
 
-Pri opakovaní úlohy (po kliknutí na "Again") program zkontroluje deadline úlohy, ak je v minulosti, dátum nastaví na aktuálny.
+Pri opakovaní úlohy (po kliknutí na 'Again') program skontroluje termín úlohy. Ak je v minulosti, nastaví ho na aktuálny dátum.
 
 Každá úloha obsahuje 3 tlačidlá:
 
@@ -64,3 +64,13 @@ Mobilné zobrazenie filtrovaných úloh s vysokou prioritou:
 
 Po spustení môžeš začať pridávať nové úlohy.
 Ak aplikáciu spustíš opakovane, zoznam predchádzajúcich úloh sa načíta z `localStorage` pre túto URL adresu.
+
+## Funkcie nad rámec zadania (voliteľné)
+
+V kategórii Funkcie a Krátky popis funkčnosti sú vymenované všetky funkcie. Tu sú zhrnuté funkcie nad rámec zadania:
+
+- Farebné zvýraznenie úloh podľa priority: Program pridáva každej priorite osobitnú farbu: HIGH = červená, MEDIUM = oranžová, LOW = zelená.
+- Zoradenie úloh podľa dátumu a priority: Vo všetkých troch stĺpcoch sú úlohy zoradené najprv podľa dátumu a potom podľa priority.
+- Úprava parametrov existujúcej úlohy: Používateľ má možnosť upraviť všetky tri parametre úlohy.
+- Uloženie do localStorage: Umožňuje opätovné načítanie celej aplikácie bez straty úloh. (Vylepšenie: napísanie backend časti aplikácie a ukladanie úloh do SQL databázy.)
+- Filtrovanie úloh podľa dátumu a priority: Používateľ si môže vyfiltrovať, ktoré úlohy chce mať zobrazené a ktoré nie.
