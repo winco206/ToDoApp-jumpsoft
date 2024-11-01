@@ -30,12 +30,15 @@ Každá úloha obsahuje 3 tlačidlá:
 ## Screen z aplikácie
 
 Zoznam úloh:
+
 ![Hlavná stránka](./img/mainPage.png)
 
 "PopUp" okno pre pridanie úlohy a editáciu existujúcej úlohy:
+
 ![PopUp](./img/popUp.png)
 
 Mobilné zobrazenie filtrovaných úloh s vysokou prioritou:
+
 ![Mobilné zobrazenie](./img/filterMobile.png)
 
 ## Spustenie projektu
